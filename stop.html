@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopwatch</title>
+    <link rel="icon" href="../music/image.png">
+    <link rel="stylesheet" href="./stop.css">
+</head>
+<body>
+    <h1>stopwatch</h1>
+    <h1 id="stopwatch">00:00</h1>
+    <div> 
+    <button id="start"><i>start</i></button>
+    <button id="stop"><i>stop</i></button>
+    <button id="reset"><i>reset</i></button>
+    </div>
+<script>
+    let watch = document.getElementById("stopwatch")
+    var id;
+    var seconds=0
+    var sec=0
+    var minutes=0
+    let startbtn=document.getElementById("start")
+    let stopbtn=document.getElementById("stop")
+    let resetbtn=document.getElementById("reset")
+    startbtn.onclick=startTimer;
+    function startTimer(){
+        id=setInterval(() => {
+        seconds+=1
+        if(seconds===60){
+            minutes+=1
+            seconds=0
+        }
+        if(seconds<10){
+         watch.innerText=(minutes<10)?`0${minutes}:0${seconds}`:watch.innerText=`${minutes}:0${seconds}`
+            }
+        else{
+            watch.innerText=`0${minutes}:${seconds}`
+        }
+        }, 1000);
+    }
+    stopbtn.onclick=stopTimer
+    function stopTimer(){
+        clearInterval(id)
+    }
+    resetbtn.onclick=resetTimer
+    function resetTimer(){
+        clearInterval(id)
+        watch.innerText="00:00"
+        minutes=0
+        seconds=0
+    }
+</script>
+    
+</body>
+</html>

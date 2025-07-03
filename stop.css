@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    color: aqua;
+}
+body{
+    background-color: blue;
+}
+div{
+    background-color: blueviolet;
+
+}
+button{
+    margin: 30px;
+    padding: 50px;
+    margin-left: 70px;
+    font-size: large;
+
+}
+div{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-left: 220px;
+    margin-right: 220px;
+    padding: 40px;
+    border: 30px solid black;
+}  
+   
